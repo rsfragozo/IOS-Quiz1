@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Po2-Mo-qSf">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Menu-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,238 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kf4-iR-KRW">
+                                <rect key="frame" x="257" y="487" width="85" height="30"/>
+                                <state key="normal" title="Faça o Quiz!"/>
+                                <connections>
+                                    <segue destination="xDv-ML-bp7" kind="show" id="vBq-Mw-khV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KiE-jW-8Ms">
+                                <rect key="frame" x="280" y="525" width="41" height="30"/>
+                                <state key="normal" title="Sobre"/>
+                                <connections>
+                                    <segue destination="nXp-ve-aqR" kind="show" id="dri-l2-o8n"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Guq-4Q-XeC">
+                                <rect key="frame" x="243" y="448" width="114" height="30"/>
+                                <state key="normal" title="Editar perguntas"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quiz" translatesAutoresizingMaskIntoConstraints="NO" id="mTz-k2-ILO">
+                                <rect key="frame" x="-10" y="72" width="620" height="330"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mTz-k2-ILO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="56E-2i-XvU"/>
+                            <constraint firstItem="kf4-iR-KRW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7aa-9r-WG8"/>
+                            <constraint firstItem="mTz-k2-ILO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="AiE-go-TKo"/>
+                            <constraint firstItem="Guq-4Q-XeC" firstAttribute="top" secondItem="mTz-k2-ILO" secondAttribute="bottom" constant="46" id="GiI-eZ-h4P"/>
+                            <constraint firstItem="KiE-jW-8Ms" firstAttribute="top" secondItem="kf4-iR-KRW" secondAttribute="bottom" constant="8" id="M73-e0-eVT"/>
+                            <constraint firstItem="Guq-4Q-XeC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e3y-lA-4dI"/>
+                            <constraint firstItem="kf4-iR-KRW" firstAttribute="top" secondItem="Guq-4Q-XeC" secondAttribute="bottom" constant="9" id="p0q-aA-Lq6"/>
+                            <constraint firstItem="KiE-jW-8Ms" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zXv-D4-AdE"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Menu" id="WXy-ms-6t3">
+                        <barButtonItem key="backBarButtonItem" title="Voltar" id="S2a-Eg-E7A"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1117" y="355"/>
+        </scene>
+        <!--Quiz-->
+        <scene sceneID="MjR-i5-RHz">
+            <objects>
+                <viewController id="xDv-ML-bp7" customClass="QuizViewController" customModule="Quiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="69b-Cc-fL1"/>
+                        <viewControllerLayoutGuide type="bottom" id="NFA-BK-CeU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YSc-vy-Lwd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qual é o nome do cavalo branco de Napoleão?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SvG-lI-95F">
+                                <rect key="frame" x="20" y="72" width="560" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zy0-42-dvZ">
+                                <rect key="frame" x="20" y="158.5" width="560" height="30"/>
+                                <state key="normal" title="O nome do cavalo é Branco"/>
+                                <connections>
+                                    <action selector="answer1Click:" destination="xDv-ML-bp7" eventType="touchUpInside" id="fLb-rk-XWG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xgE-dd-z7d">
+                                <rect key="frame" x="20" y="253.5" width="560" height="30"/>
+                                <state key="normal" title="Cavalo de fogo"/>
+                                <connections>
+                                    <action selector="answer1Click:" destination="xDv-ML-bp7" eventType="touchUpInside" id="UsO-sT-UXU"/>
+                                    <action selector="answer2Click:" destination="xDv-ML-bp7" eventType="touchUpInside" id="jo8-id-R4N"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ACD-Sc-sKd">
+                                <rect key="frame" x="20" y="205.5" width="560" height="30"/>
+                                <state key="normal" title="Chama-se Silver"/>
+                                <connections>
+                                    <action selector="answer2Click:" destination="xDv-ML-bp7" eventType="touchUpInside" id="0wF-iW-ekW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SvG-lI-95F" firstAttribute="top" secondItem="69b-Cc-fL1" secondAttribute="bottom" constant="8" id="0xt-gG-rze"/>
+                            <constraint firstItem="ACD-Sc-sKd" firstAttribute="leading" secondItem="YSc-vy-Lwd" secondAttribute="leadingMargin" id="14f-d4-MqR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ACD-Sc-sKd" secondAttribute="trailing" id="5Fh-vK-wrf"/>
+                            <constraint firstItem="Zy0-42-dvZ" firstAttribute="trailing" secondItem="YSc-vy-Lwd" secondAttribute="trailingMargin" id="6RI-MS-MgJ"/>
+                            <constraint firstItem="SvG-lI-95F" firstAttribute="leading" secondItem="YSc-vy-Lwd" secondAttribute="leadingMargin" id="H6v-gQ-6uW"/>
+                            <constraint firstItem="xgE-dd-z7d" firstAttribute="top" secondItem="ACD-Sc-sKd" secondAttribute="bottom" constant="18" id="I2f-Mj-E99"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xgE-dd-z7d" secondAttribute="trailing" id="IcA-xM-vYK"/>
+                            <constraint firstItem="Zy0-42-dvZ" firstAttribute="leading" secondItem="YSc-vy-Lwd" secondAttribute="leadingMargin" id="KCq-d8-an8"/>
+                            <constraint firstItem="xgE-dd-z7d" firstAttribute="leading" secondItem="YSc-vy-Lwd" secondAttribute="leadingMargin" id="WKA-7K-TfE"/>
+                            <constraint firstItem="SvG-lI-95F" firstAttribute="trailing" secondItem="YSc-vy-Lwd" secondAttribute="trailingMargin" id="Zh5-av-8DX"/>
+                            <constraint firstItem="ACD-Sc-sKd" firstAttribute="top" secondItem="Zy0-42-dvZ" secondAttribute="bottom" constant="17" id="eI9-JD-mFY"/>
+                            <constraint firstItem="Zy0-42-dvZ" firstAttribute="top" secondItem="SvG-lI-95F" secondAttribute="bottom" constant="66" id="hEQ-FN-H6K"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Quiz" id="VH7-xa-U0E"/>
+                    <connections>
+                        <outlet property="btnAnswer1" destination="Zy0-42-dvZ" id="YkG-Pa-8rs"/>
+                        <outlet property="btnAnswer2" destination="ACD-Sc-sKd" id="gVy-IR-jsW"/>
+                        <outlet property="btnAnswer3" destination="xgE-dd-z7d" id="FAl-bK-unL"/>
+                        <outlet property="lblQuestion" destination="SvG-lI-95F" id="cmJ-2E-QeV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eGW-r5-yig" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1857" y="355"/>
+        </scene>
+        <!--Sobre-->
+        <scene sceneID="FBi-iJ-2R4">
+            <objects>
+                <viewController id="nXp-ve-aqR" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cIV-pc-hzQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="7Jx-X1-rgh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vDB-hM-X3e">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zRd-gf-IFh">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Eh-2Z-F59" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quiz" translatesAutoresizingMaskIntoConstraints="NO" id="hNo-pH-kb6">
+                                                <rect key="frame" x="-10" y="8" width="620" height="330"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="40" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LnS-D1-TbE">
+                                                <rect key="frame" x="8" y="346" width="584" height="850"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="850" id="fO5-4h-faP"/>
+                                                </constraints>
+                                                <mutableString key="text">Aplicativo Produzido na PUCPR
+
+Coordenação: Fábio Vinícius Binder
+
+Professor: Vinícius Godoy de Mendonça 
+Colaboradores:
+Aluno1 Aluno2
+Aluno3
+Aluno4 Aluno5
+Aluno6 Aluno7
+Aluno8
+Aluno9
+Aluno10
+Aluno11 Aluno12
+Aluno13
+Aluno14 Aluno15
+Aluno16 Aluno17
+Aluno18
+Aluno19
+Aluno20
+Aluno21 Aluno22
+Aluno23
+Aluno24 Aluno25
+Aluno26 Aluno27
+Aluno28
+Aluno29
+Aluno30
+
+Copyright 2016 - All Rights Reserved
+</mutableString>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <string key="userLabel">Aplicativo Produzido na PUCPR  Coordenação: Fábio Vinícius Binder  Professor: Vinícius Godoy de Mendonça  Colaboradores: Aluno1 Aluno2 Aluno3 Aluno4 Aluno5 Aluno6 Aluno7 Aluno8 Aluno9 Aluno10 Aluno11 Aluno12 Aluno13 Aluno14 Aluno15 Aluno16 Aluno17 Aluno18 Aluno19 Aluno20 Aluno21 Aluno22 Aluno23 Aluno24 Aluno25 Aluno26 Aluno27 Aluno28 Aluno29 Aluno30  Copyright 2016 - All Rights Reserved</string>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="LnS-D1-TbE" secondAttribute="bottom" constant="8" id="OnN-Rj-eTF"/>
+                                            <constraint firstItem="hNo-pH-kb6" firstAttribute="top" secondItem="7Eh-2Z-F59" secondAttribute="top" constant="8" id="YEc-dq-HKZ"/>
+                                            <constraint firstItem="LnS-D1-TbE" firstAttribute="centerX" secondItem="7Eh-2Z-F59" secondAttribute="centerX" id="Ypg-7X-mPd"/>
+                                            <constraint firstItem="LnS-D1-TbE" firstAttribute="top" secondItem="hNo-pH-kb6" secondAttribute="bottom" constant="8" id="aca-Ck-JUx">
+                                                <string key="userLabel">Aplicativo Produzido na PUCPR  Coordenação: Fábio Vinícius Binder  Professor: Vinícius Godoy de Mendonça  Colaboradores: Aluno1 Aluno2 Aluno3 Aluno4 Aluno5 Aluno6 Aluno7 Aluno8 Aluno9 Aluno10 Aluno11 Aluno12 Aluno13 Aluno14 Aluno15 Aluno16 Aluno17 Aluno18 Aluno19 Aluno20 Aluno21 Aluno22 Aluno23 Aluno24 Aluno25 Aluno26 Aluno27 Aluno28 Aluno29 Aluno30  Copyright 2016 - All Rights Reserved .top = quiz.bottom + 8</string>
+                                            </constraint>
+                                            <constraint firstItem="hNo-pH-kb6" firstAttribute="centerX" secondItem="7Eh-2Z-F59" secondAttribute="centerX" id="jn0-lp-fT7"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="LnS-D1-TbE" secondAttribute="trailing" id="n7T-dg-4Px"/>
+                                            <constraint firstItem="LnS-D1-TbE" firstAttribute="leading" secondItem="7Eh-2Z-F59" secondAttribute="leadingMargin" id="wZg-6j-9wF"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="7Eh-2Z-F59" firstAttribute="leading" secondItem="zRd-gf-IFh" secondAttribute="leading" id="0of-TK-x3R"/>
+                                    <constraint firstAttribute="trailing" secondItem="7Eh-2Z-F59" secondAttribute="trailing" id="JMY-xU-zRG"/>
+                                    <constraint firstItem="7Eh-2Z-F59" firstAttribute="top" secondItem="zRd-gf-IFh" secondAttribute="top" id="WdV-WD-AxJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="7Eh-2Z-F59" secondAttribute="bottom" id="fPx-uY-gnj"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7Eh-2Z-F59" firstAttribute="width" secondItem="vDB-hM-X3e" secondAttribute="width" id="1jQ-K6-Zys"/>
+                            <constraint firstItem="7Jx-X1-rgh" firstAttribute="top" secondItem="zRd-gf-IFh" secondAttribute="bottom" id="AVH-w2-zlA"/>
+                            <constraint firstItem="zRd-gf-IFh" firstAttribute="top" secondItem="cIV-pc-hzQ" secondAttribute="bottom" id="RiN-pM-3x3"/>
+                            <constraint firstAttribute="trailing" secondItem="zRd-gf-IFh" secondAttribute="trailing" id="gZg-VH-ZtY"/>
+                            <constraint firstItem="zRd-gf-IFh" firstAttribute="leading" secondItem="vDB-hM-X3e" secondAttribute="leading" id="lL9-aq-cDG"/>
+                            <constraint firstItem="7Eh-2Z-F59" firstAttribute="height" secondItem="vDB-hM-X3e" secondAttribute="height" priority="250" id="nba-M9-vHX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Sobre" id="5Qe-1S-QJw"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CvM-pM-GDe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1117" y="1114"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uPl-78-uEV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Po2-Mo-qSf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KeQ-Sn-bL2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="KtS-Fz-jfw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="la6-Oc-wNr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="296" y="1015"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="quiz" width="620" height="330"/>
+    </resources>
 </document>
